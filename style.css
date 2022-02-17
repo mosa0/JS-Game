@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#game {
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  top: 50px;
+}
+#character {
+  width: 20px;
+  height: 20px;
+  background-image: url(./images/Hollow\ knight.png);
+  background-size: 20px 20px;
+  border-radius: 40%;
+  position: relative;
+  top: 400px;
+  left: 190px;
+  z-index: 1000000;
+}
+.block {
+  width: 400px;
+  height: 20px;
+  background-color: black;
+  position: relative;
+  top: 100px;
+  margin-top: -20px;
+}
+.hole {
+  width: 40px;
+  height: 20px;
+  background-color: white;
+  position: relative;
+  top: 100px;
+  margin-top: -20px;
+}
+
+/* #bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+#bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+} */

@@ -10,12 +10,13 @@
   overflow: hidden;
   position: relative;
   top: 50px;
+  background-color: #808080;
 }
 #character {
-  width: 20px;
-  height: 20px;
-  background-image: url(./images/Hollow\ knight.png);
-  background-size: 20px 20px;
+  width: 25px;
+  height: 35px;
+  background-image: url(./images/kisspng-deviantart-pixel-art-hollow-knight-digital-art-chinese-style-hollow-frame-5aead8140206a0.1848291815253401800083.png);
+  background-size: 25px 35px;
   border-radius: 40%;
   position: relative;
   top: 400px;
@@ -25,7 +26,7 @@
 .block {
   width: 400px;
   height: 20px;
-  background-color: white;
+  background-color: none;
   position: relative;
   top: 100px;
   margin-top: -20px;
@@ -36,20 +37,21 @@
 .hole {
   width: 40px;
   height: 20px;
-  background-color: white;
+  background-color: gray;
   position: relative;
   top: 100px;
   margin-top: -20px;
 }
 
-/* #bg {
+#bg {
   position: fixed;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
 }
-#bg img {
+.background {
+  background-image: url(./images/Dungeon\ wallpaper.jpg);
   position: absolute;
   top: 0;
   left: 0;
@@ -58,4 +60,5 @@
   margin: auto;
   min-width: 50%;
   min-height: 50%;
-} */
+  z-index: -10000;
+}

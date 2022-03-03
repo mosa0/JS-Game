@@ -5,6 +5,12 @@ var both = 0;
 var counter = 0;
 var currentBlocks = [];
 
+//Music ost
+var audio = new Audio('Ost/Undertale OST - 010 - Ghost Fight.mp3');
+//audio.play();
+audio.loop = true
+
+
 //Links bewegen
 function moveLeft(){
     var left =

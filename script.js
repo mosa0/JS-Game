@@ -6,9 +6,12 @@ var counter = 0;
 var currentBlocks = [];
 
 //Music ost
-var audio = new Audio('Ost/Undertale OST - 010 - Ghost Fight.mp3');
-//audio.play();
+var audio = new Audio('Ost/Hollow Knight OST - The White Lady (Full Version).mp3');
+audio.play();
 audio.loop = true
+audio.volume = 0.1;
+
+
 
 
 //Links bewegen
@@ -17,6 +20,8 @@ function moveLeft(){
     parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left>0){
     character.style.left = left - 2 + "px";
+    character.style.transform='scaleX(-1)';
+    
     }
 }
 //Rechts bewegen
@@ -25,6 +30,7 @@ function moveRight(){
     parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left<380){
     character.style.left = left + 2 + "px";
+    character.style.transform='scaleX(1)';
     }
 }
 //Regristeer keypresses
@@ -56,6 +62,7 @@ var holeLastTop =
 parseInt(window.getComputedStyle(holeLast).getPropertyValue("top"));
 }
 if(blockLastTop<400 ||counter==0){
+
 //html elements (platform, counter, hole, positie)
 var block = document.createElement("div");
 var hole = document.createElement("div");
@@ -72,32 +79,39 @@ game.appendChild(hole);
 currentBlocks.push(counter);
 counter++;
 }
+
 //Platform bewegen
 var characterTop =
 parseInt(window.getComputedStyle(character).getPropertyValue("top"));
 var characterLeft =
 parseInt(window.getComputedStyle(character).getPropertyValue("left"));
 var drop = 0;
+
+//game-over alert
 if(characterTop <= 0){
     alert("Game Over. Score: "+(counter-9));
     clearInterval(blocks);
     location.reload()
 }
 
+//Platform en gat object
 for(var i = 0; i <currentBlocks.length; i ++){
     let current = currentBlocks[i];
     let iblock = document.getElementById("block"+current);
     let ihole = document.getElementById("hole"+current);
     let iblockTop =
     parseFloat(window.getComputedStyle(iblock).getPropertyValue("top"));
-    iblock.style.top = iblockTop - 0.5 + "px";
-    ihole.style.top = iblockTop - 0.5 + "px";
+
+    //platform en hole omhoog laten gaan + snelheid
+    iblock.style.top = iblockTop - 0.7 + "px";
+    ihole.style.top = iblockTop - 0.7 + "px";
     if(iblockTop < -20){
         currentBlocks.shift();
         iblock.remove();
         ihole.remove();
 
     }
+    //laat character door gat vallen?
     if(iblockTop-20<characterTop && iblockTop>characterTop){
         drop++;
         let iholeLeft =
